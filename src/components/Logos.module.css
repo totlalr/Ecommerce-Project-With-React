@@ -1,0 +1,21 @@
+.contianer {
+  text-align: center;
+  margin: 60px;
+}
+
+.contianer h3 {
+  color: #505050;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.contianer div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40xp;
+}
+
+.contianer img {
+  width: 300px;
+}

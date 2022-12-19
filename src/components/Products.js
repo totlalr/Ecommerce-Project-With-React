@@ -1,34 +1,40 @@
 import React, { Component } from "react";
+import styles from "./Products.module.css";
 import axios from "axios";
 import Card from "./Card";
 
 class Products extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     products: [],
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+    };
+  }
 
-  // componentDidMount() {
-  //   axios.get("https://fakestoreapi.com/products/1").then((response) =>
-  //     this.setState({
-  //       products: response.data,
-  //     })
-  //   );
-  // }
+  componentDidMount() {
+    axios.get("https://fakestoreapi.com/products").then((response) =>
+      this.setState({
+        products: response.data,
+      })
+    );
+  }
+
   render() {
+    const { products } = this.state;
     return (
-      <div>
-        {/* {this.state.products.map((product) => (
-          <Card
-            image={product.image}
-            name={product.title}
-            cost={product.cost}
-            key={product.id}
-          />
-        ))} */}
-        products.....!
+      <div className={styles.container}>
+        {products.length ? (
+          this.state.products.map((product) => (
+            <Card
+              image={product.image}
+              name={product.title}
+              cost={`${product.price} $`}
+              key={product.id}
+            />
+          ))
+        ) : (
+          <h1>Loading ...</h1>
+        )}
       </div>
     );
   }

@@ -29,6 +29,7 @@ class Cards extends Component {
             name={phone.name}
             cost={phone.cost}
             key={phone.id}
+            id={phone.id}
           />
         ))}
       </div>

@@ -28,7 +28,11 @@
   font-weight: bold;
 }
 
+.list li a {
+  color: #fff;
+  text-decoration: none;
+}
 
-.list li:hover{
-  color: #b4b4b4 ;
+.list li a:hover {
+  color: #b4b4b4;
 }
